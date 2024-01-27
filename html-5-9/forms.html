@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>forms</title>
+    </head>
+    <body>
+
+        <!--        action and method-->
+
+<!--        <form action="http://www.example.com/subscribe.php"-->
+<!--              method="get">-->
+<!--            <p>This is where the form controls will appear.-->
+<!--            </p>-->
+<!--        </form>-->
+
+        <!--  text input  -->
+
+                form element
+<!--                <form-->
+<!--                        id="form"-->
+<!--                      onsubmit="myFunction(event)"-->
+<!--                >-->
+<!--                    <p>Username:-->
+<!--                        &lt;!&ndash;                input element with type = text&ndash;&gt;-->
+<!--                        <input type="text"-->
+<!--                               name="username"-->
+<!--                               size="15"-->
+<!--                               maxlength="30"/>-->
+<!--                    </p>-->
+<!--                </form>-->
+
+        <!--pass word input-->
+<!--                <form id="form">-->
+<!--                    <p>Username:-->
+<!--                        <input type="text"-->
+<!--                               name="username"-->
+<!--                               size="15"-->
+<!--                               maxlength="30"/>-->
+<!--                    </p>-->
+<!--                    <p>Password:-->
+<!--                        <input type="password"-->
+<!--                               name="password"-->
+<!--                               size="15"-->
+<!--                               maxlength="30"/>-->
+<!--                    </p>-->
+<!--                </form>-->
+
+        <!--        text area-->
+<!--                <form id="form">-->
+<!--                    <p>What did you think of this gig?</p>-->
+<!--                    <textarea name="comments"-->
+<!--                              cols="20"-->
+<!--                              rows="4">-->
+<!--                        Enter your comments...-->
+<!--                    </textarea>-->
+<!--                </form>-->
+
+        <!--radio button-->
+<!--                <form id="form" onsubmit="myFunction(event)">-->
+<!--                    <p>Please select your favorite genre:-->
+<!--                        <br/>-->
+<!--                        <input type="radio" name="genre" value="rock"-->
+<!--                               checked="checked"/> Rock-->
+<!--                        <input type="radio" name="genre" value="pop"/>-->
+<!--                        Pop-->
+<!--                        <input type="radio" name="genre" value="jazz"/>-->
+<!--                        Jazz-->
+<!--                    </p>-->
+<!--                    <input type="submit" name="subscribe"/>-->
+<!--                </form>-->
+
+        <!--        checkboxes-->
+<!--        <form id="form" onsubmit="myFunction(event)">-->
+<!--            <p>Please select your favorite music service(s):-->
+<!--                <br/>-->
+<!--                <input type="checkbox"-->
+<!--                       name="service"-->
+<!--                       value="itunes"-->
+<!--                       checked="checked"/>-->
+<!--                iTunes-->
+<!--                <input type="checkbox"-->
+<!--                       name="service"-->
+<!--                       value="lastfm"/>-->
+<!--                Last.fm-->
+<!--                <input type="checkbox"-->
+<!--                       name="service"-->
+<!--                       value="spotify"/>-->
+<!--                Spotify-->
+<!--            </p>-->
+<!--            <input type="submit" name="subscribe"/>-->
+<!--        </form>-->
+
+<!--        labels and fieldsets-->
+        <form id="form" onsubmit="myFunction(event)">
+            <fieldset>
+                <legend>Contact details</legend>
+                <label>Email:<br />
+                    <input type="text" name="email" /></label><br /> <label>Mobile:<br />
+                <input type="text" name="mobile" /></label><br /> <label>Telephone:<br />
+                <input type="text" name="telephone" /></label>
+            </fieldset>
+        </form>
+
+
+        <script>
+            function myFunction(e) {
+                e.preventDefault()
+                const formData = new FormData(document.getElementById('form'))
+                console.log(formData)
+            }
+        </script>
+
+    </body>
+</html>
