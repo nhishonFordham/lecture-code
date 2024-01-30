@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>text</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+
+        <!--  fonts  -->
+        <p class="honk-font">honk font</p>
+        <p class="roboto-font">roboto font</p>
+
+
+        <!--  sizes  -->
+        <div class="twenty-pixels">20px</div>
+        <div class="percent">percent</div>
+        <div class="em-container">
+            <p class="em">
+                em text
+            </p>
+        </div>
+
+<!--        bold + italic -->
+
+        <div class="bold-text">
+            bold
+        </div>
+        <div class="italic-text">
+            italic
+        </div>
+
+<!--        align -->
+
+        <div class="text-align">align this text</div>
+
+    </body>
+</html>
+
+
+<style>
+    @font-face {
+        font-family: "Honk";
+        src: url("./honk.ttf") format("truetype");
+    }
+
+    .honk-font {
+        font-family: Honk;
+    }
+
+    .roboto-font {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .twenty-pixels {
+        font-size: 20px;
+    }
+    .percent {
+        font-size: 100%;
+    }
+
+    .em-container {
+        font-size: 20px;
+    }
+
+    .em {
+        font-size: 2em;
+    }
+
+    .bold-text {
+        font-weight: 700;
+    }
+
+    .italic-text {
+        font-style: italic;
+    }
+
+    .text-align {
+        border: 1px green solid;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+    }
+
+</style>

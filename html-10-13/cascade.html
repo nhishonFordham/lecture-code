@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>cascade</title>
+    </head>
+
+    <body>
+        <h1>Potatoes</h1>
+        <p id="intro">There are <i>dozens</i> of different
+            <b>potato</b> varieties.</p>
+        <p>They are usually described as <b>early</b>, second early
+            and maincrop potatoes.</p>
+
+        <style>
+
+            i {
+                color: green;
+            }
+
+            /*last rule*/
+            i {
+                color: red;
+            }
+
+            b {
+                color: pink;
+            }
+
+            /* specificity */
+            p b {
+                color: violet;
+            }
+
+            /* ids usually trump everything -specifically this element- */
+            p#intro {
+                color: green;
+            }
+
+
+            /* important also trumps */
+            p b {
+                color: blue !important;
+            }
+
+            p {
+                color: brown;
+            }
+        </style>
+
+    </body>
+</html>
