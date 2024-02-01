@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>homework3</title>
+    </head>
+    <body>
+
+
+        <div class="parent-container">
+
+            <div class="majors-container">
+
+                <div class="majors-content-container">
+                    <p>majors and minors</p>
+                    <div class="major-button">majors and minors</div>
+                </div>
+
+            </div>
+            <div class="computer-science-container">
+
+                <div class="computer-science-content-container">
+                    <div class="nav">
+
+                        Home
+                        <span class="divider">/</span>
+                        Admissions and Aid
+                        <span class="divider">/</span>
+                        Undergraduate Admission
+                        <span class="divider">/</span>
+                        Majors and Minors
+                        <span class="divider">/</span>
+                        Computer Science
+
+                    </div>
+                    <h1>computer science</h1>
+                    <div>Degree Options: Major, Minor</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <style>
+
+            body {
+                height: 100vh;
+            }
+
+            .parent-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .computer-science-container {
+                order: 1;
+                padding: 0 50px;
+            }
+
+            .majors-container {
+                order: 2;
+                display: flex;
+                flex-direction: column;
+                border-right: 1px solid #e7ebe7;
+            }
+            .majors-content-container {
+                padding: 0 50px;
+            }
+
+            .divider {
+                padding: 0 5px;
+            }
+
+            @media screen and (min-width: 1200px) {
+
+                .parent-container {
+                    flex-direction: row;
+                }
+                .computer-science-container {
+                    width: 900px;
+                    order: 2;
+                }
+
+                .majors-container {
+                    width: 300px;
+                    order: 1
+                }
+            }
+
+            .majors-container .majors-content-container p {
+                margin: 0;
+            }
+            .major-button {
+                text-align: center;
+                background-color: maroon;
+                color:white;
+            }
+
+            .computer-science-container .computer-science-content-container h1 {
+                margin: 0;
+            }
+
+        </style>
+
+    </body>
+</html>
