@@ -2,12 +2,17 @@ const cat = {
     name: 'Pinecone',
     color: 'grey',
     type: 'long hair',
-    meow: () => {
-        console.log('meow')
+    meow: function ()  {
+        console.log(this.name)
+    },
+    meow2: () => {
+        console.log(this.name)
+
     }
 }
 
-console.log(cat.name)
+// console.log(cat.name)
 cat.meow()
+cat.meow2()
 
 

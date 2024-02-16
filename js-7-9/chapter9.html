@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Platform APIs</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <div>
+
+            <button id="pokemon-button">
+                random pokemon
+            </button>
+
+            <div id="random-pokemon">
+
+            </div>
+        </div>
+
+        <script>
+
+            if (localStorage.getItem("lastPokemon")) {
+                const lastPokemon = JSON.parse(localStorage.getItem("lastPokemon"))
+                $("#random-pokemon").html(`
+                            <div>${lastPokemon.name}</div>
+                            <img src="${lastPokemon.sprite}" />
+                        `);
+            }
+
+            $("#pokemon-button").click(function () {
+                const randomID = Math.floor(Math.random() * 1026);
+                $.get(`https://pokeapi.co/api/v2/pokemon/${randomID}`, function (data, status) {
+                    if (data.id) {
+                        localStorage.setItem("lastPokemon", JSON.stringify({
+                            name: data.name,
+                            sprite: data.sprites.front_default
+                        }));
+                        $("#random-pokemon").html(`
+                            <div>${data.name}</div>
+                            <img src="${data.sprites.front_default}" />
+                        `);
+
+                    }
+
+                });
+            });
+
+            console.log(window)
+            console.log(document)
+
+        </script>
+
+        <style>
+            .color-container {
+                margin-bottom: 50px;
+            }
+        </style>
+
+    </body>
+</html>
