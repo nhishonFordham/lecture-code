@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h3>{{ title }}</h3>
+
+        <button id="fetch-db">
+            fetch from backend
+        </button>
+
+        <div id="data-container"></div>
+
+        <script>
+
+          $(document).ready(function () {
+
+            $("#fetch-db").click(function () {
+              $.get(`http://localhost:8888/user`, function (data, status) {
+                if (data) {
+                  const parsed = JSON.parse(data)
+                  $("#data-container").append(`
+                    <div>
+                      <p>${parsed.firstName} ${parsed.lastName} </p>
+                    </div>`)
+                }
+              })
+            })
+          })
+
+
+        </script>
+
+    </body>
+</html>
