@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AJAX</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        <button id="get-button">
+            get request
+        </button>
+
+        <button id="post-button">
+            post request
+        </button>
+
+
+        <script>
+
+            $('#get-button').on('click', function () {
+
+                $.ajax({
+                    url: 'http://localhost:3000/posts?type=postType',
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });
+            })
+
+            $('#post-button').on('click', function () {
+                const data = {
+                    title: 'test title',
+                    description: 'test description'
+                }
+                const serializedJSON = JSON.stringify(data)
+                $.ajax({
+                    url: 'http://localhost:3000/posts',
+                    type: "POST",
+                    data: serializedJSON,
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });
+            })
+
+        </script>
+
+        <style>
+            .container {
+                width: 500px;
+                clear: both;
+            }
+
+            .container input {
+                width: 100%;
+                clear: both;
+            }
+        </style>
+
+    </body>
+</html>
