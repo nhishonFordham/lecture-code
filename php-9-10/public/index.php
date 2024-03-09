@@ -1,39 +1,45 @@
 <?php
 require_once "../app/models/User.php";
 require_once "../app/core/Controller.php";
-require_once "../app/controllers/UserController.php";
-require_once "../app/controllers/ImageController.php";
+require_once "../app/controllers/AccountController.php";
+require_once "../app/controllers/ErrorController.php";
 
-use app\controllers\UserController;
-use app\controllers\ImageController;
+use app\controllers\AccountController;
+use app\controllers\ErrorController;
 
 $uri = strtok($_SERVER["REQUEST_URI"], '?');
 
-if ($uri === '/view-users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $userController = new UserController();
-    $userController->viewUsers();
+if ($uri === '/login' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+    $accountController = new AccountController();
+    $accountController->viewLogin();
 }
 
-if ($uri === '/users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $userController = new UserController();
-    $userController->getUsers();
+if ($uri === '/login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $accountController = new AccountController();
+    $accountController->login();
 }
 
-if ($uri === '/users' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userController = new UserController();
-    $userController->saveUser();
+if ($uri === '/logout' ) {
+    $accountController = new AccountController();
+    $accountController->logout();
 }
 
-if ($uri === '/images-view' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $imageController = new ImageController();
-    $imageController->viewImages();
+
+if ($uri === '/account') {
+    $accountController = new AccountController();
+    $accountController->viewAccount();
 }
 
-if ($uri === '/images' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $imageController = new ImageController();
-    $imageController->saveImage();
-    //send back
+if ($uri === '/errors') {
+    $errorController = new ErrorController();
+    $errorController->viewErrors();
 }
+
+if ($uri === '/cookies') {
+    include './assets/views/cookies/cookies.php';
+}
+
+
 
 ?>
 

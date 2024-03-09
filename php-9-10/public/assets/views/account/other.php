@@ -1,1 +1,2 @@
-<?php
+
+<div>other</div>
