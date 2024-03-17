@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Users</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="users-container"></div>
+
+        <h3 style="margin-top: 50px">search for users</h3>
+
+        <form id="form-id">
+            <div style="margin: 20px 0">
+                <label>name</label>
+                <input type="text" id='name-input' name="name">
+            </div>
+            <div style="margin: 20px 0">
+                <input type="submit" value="submit"><br/>
+            </div>
+        </form>
+
+        <div id="data-container"></div>
+
+        <script>
+
+            $(document).ready(function () {
+
+                $('#form-id').on('submit', function (e) {
+                    e.preventDefault();
+                    const searchInput = $('#name-input').val();
+                    $.ajax({
+                        url: `http://localhost:8888/users-by-name?name=${searchInput}`,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (data) {
+                            $('#users-container').html('')
+                            $.each(data, function (key, value) {
+                                $('#users-container').append(`
+                                   <p>${value['firstName']} ${value['lastName']}</p> `)
+                            });
+                        }
+                    });
+                })
+
+            })
+
+
+        </script>
+
+    </body>
+</html>

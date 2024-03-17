@@ -243,3 +243,5 @@ values (1, 2);
 -- deleted
 
 -- constraints
+
+insert into users (firstName, lastName) values ('nate', 'hishon');
